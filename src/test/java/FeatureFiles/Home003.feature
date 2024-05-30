@@ -15,5 +15,4 @@ Feature: Home functionality
       | hamburgerMenuBtn   |
       | newMessageChatBtn  |
       | newMessageBtn      |
-      | BtnClose      |
       | profileSettingsBtn |

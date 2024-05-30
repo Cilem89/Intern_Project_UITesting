@@ -35,18 +35,15 @@ public class Home003 {
     @Then("Move to the elements und click on the elements")
     public void moveToTheElementsUndClickOnTheElements(DataTable tabMenuElements) {
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
-       Actions actionDriver=new Actions(GWD.getDriver());
-        JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
+        Actions actionDriver = new Actions(GWD.getDriver());
 
         List<String> tabMenuElementList = tabMenuElements.asList(String.class);
 
         for (int i = 0; i < tabMenuElementList.size(); i++) {
             WebElement webElement = hc.getWebelement(tabMenuElementList.get(i));
             wait.until(ExpectedConditions.elementToBeClickable(webElement));
-            js.executeScript("arguments[0].click();", webElement);
-
-            //    actionDriver.moveToElement(webElement).click().build().perform();
-           actionDriver.sendKeys(Keys.ESCAPE).build().perform();
+            actionDriver.moveToElement(webElement).click().build().perform();
+            actionDriver.sendKeys(Keys.ESCAPE).build().perform();
 
         }
 

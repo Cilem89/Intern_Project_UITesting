@@ -34,7 +34,7 @@ public class HomeContent003 extends ParentPage{
     @FindBy(css = "[class='mat-mdc-menu-trigger mat-mdc-button-wrapper mdc-button mat-mdc-button mat-mdc-button-unchecked mat-unthemed mat-mdc-button-base']")
     public WebElement hamburgerMenuBtn;
 
-    @FindBy(xpath = "(//div[@class='mat-badge mat-badge-accent mat-badge-above mat-badge-after mat-badge-small'])[1]")
+    @FindBy(xpath = "//div[@class='mat-badge mat-badge-accent mat-badge-above mat-badge-after mat-badge-small mat-badge-hidden']")
     public WebElement newMessageChatBtn;
 
     @FindBy(xpath = "(//button[@class='mat-mdc-tooltip-trigger mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base'])[3]")
