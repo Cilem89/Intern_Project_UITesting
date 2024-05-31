@@ -14,8 +14,8 @@ public class FinanceSteps {
     Finance fc=new Finance();
     @Given("The finance section in the hamburger menu should be clicked.")
     public void theFinanceSectionInTheHamburgerMenuShouldBeClicked() {
-      fc.myClick(fc.hamburgerMunu);
-      fc.myClick(fc.financeButton);
+        fc.myClick(fc.hamburgerMunu);
+        fc.myClick(fc.financeButton);
         fc.myClick(fc.myFinance);
 
     }

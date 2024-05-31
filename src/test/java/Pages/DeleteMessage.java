@@ -5,9 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
-
-public class DeleteMessage extends  ParentPage {
+public class DeleteMessage extends ParentPage {
     public DeleteMessage() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
@@ -18,24 +16,16 @@ public class DeleteMessage extends  ParentPage {
     @FindBy(xpath = "//span[@class='mat-mdc-menu-item-text']")
     public WebElement messaging;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-menu-item-text'])[8]")
-    public WebElement inBox;
     @FindBy(xpath = "(//span[@class='mat-mdc-menu-item-text'])[10]")
     public WebElement trash;
 
-
-    @FindBy(xpath ="(//ms-delete-button)[1]")
+    @FindBy(xpath = "//tbody/tr//ms-delete-button")
     public WebElement deleteBtn;
-    @FindBy(xpath = "//button[@class='mdc-button mat-mdc-button mdc-button--raised mat-mdc-raised-button mat-accent mat-mdc-button-base']")
-    public WebElement yesButton;
-    @FindBy(xpath = "(//span[@class='mat-mdc-focus-indicator'])[19]")
-    public WebElement refreshButton;
-    @FindBy(xpath = "(//span[@class='mat-mdc-focus-indicator'])[17]")
-    public WebElement replayButton;
+
     @FindBy(xpath = "//span[text()=' Delete ']")
     public WebElement deleteConfirm;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-focus-indicator'])[28]")
+    @FindBy(xpath = "//tbody/tr//ms-standard-button")
     public WebElement restoreButton;
 
     public WebElement getWebElement(String strElement) {
@@ -48,16 +38,12 @@ public class DeleteMessage extends  ParentPage {
             case "deleteConfirm":
                 return this.deleteConfirm;
             case "deleteBtn":
-                return (WebElement) this.deleteBtn;
+                return this.deleteBtn;
             case "trash":
                 return this.trash;
             case "messaging":
                 return this.messaging;
-
-
         }
-
         return null;
-
     }
 }
