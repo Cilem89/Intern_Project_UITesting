@@ -1,10 +1,8 @@
 package StepDefinitions;
-
 import Pages.DeleteMessage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebElement;
 
 public class DeleteMessageSteps {
     DeleteMessage dm=new DeleteMessage();
@@ -17,11 +15,13 @@ public class DeleteMessageSteps {
     }
 
     @When("the delete icon is clicked, a message deletion confirmation should appear, and the message should be deletable.")
-    public void theDeleteIconIsClickedAMessageDeletionConfirmationShouldAppearAndTheMessageShouldBeDeletable() {
+    public void theDeleteIconIsClickedAMessageDeletionConfirmationShouldAppearAndTheMessageShouldBeDeletable() throws InterruptedException {
         dm.myClick(dm.hamburgerMunu);
         dm.myClick(dm.messaging);
         dm.myClick(dm.trash);
+        Thread.sleep(10000);
         dm.myClick(dm.deleteBtn);
+        Thread.sleep(10000);
         dm.myClick(dm.deleteConfirm);
     }
 
